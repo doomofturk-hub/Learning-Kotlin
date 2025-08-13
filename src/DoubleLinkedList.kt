@@ -5,9 +5,9 @@ class DoubleLinkedList {
 
     fun addToList(theObject: Int) {
 
-        var newObject: Node? = Node(theObject)
+        val newObject = Node(theObject)
 
-        var checking = start
+        var checking = tail
 
         if (start == null) {
             start = newObject
@@ -16,18 +16,15 @@ class DoubleLinkedList {
         } else {
             while (checking?.next != null) {
                 checking = checking.next
-
             }
-            checking?.next = newObject
-            newObject?.previous = tail
+
+            tail?.next = newObject
+            newObject.previous = tail
             tail = newObject
 
         }
     }
 
-    fun AddRange(cha: IntArray){
-
-    }
 
     fun removeFromTailInList() {
         if (tail != null) {
@@ -48,19 +45,22 @@ class DoubleLinkedList {
         }
     }
 
-    fun Print() {
+    fun addRangeNumbers(rangeNumbers: IntArray) {
+        for (i in 0 until rangeNumbers.size) {
+            val newObject = Node(rangeNumbers[i])
+            if (start == null) {
+                start = newObject
+                tail = newObject
+            } else {
+                tail?.next = newObject
+                newObject.previous = tail
+                tail = newObject
 
-        var checking = start
-
-        while (checking != null) {
-            println("${checking.value}")
-            checking = checking.next
+            }
 
         }
     }
+
 }
-
-
-
 
 
