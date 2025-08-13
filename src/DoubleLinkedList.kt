@@ -25,6 +25,9 @@ class DoubleLinkedList {
         }
     }
 
+    fun AddRange(cha: IntArray){
+
+    }
 
     fun removeFromTailInList() {
         if (tail != null) {
