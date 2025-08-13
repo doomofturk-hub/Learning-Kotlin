@@ -56,6 +56,7 @@ class DoubleLinkedList {
                 newObject.previous = tail
                 tail = newObject
 
+
             }
 
         }

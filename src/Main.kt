@@ -14,6 +14,7 @@ fun main() {
     linkedList.addRangeNumbers(rangeNumbers)
     var newNode = linkedList.start
 
+
     repeat(6) {
         if (newNode != null) {
             print("Node: ${newNode.value}")
