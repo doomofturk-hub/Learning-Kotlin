@@ -56,12 +56,41 @@ class DoubleLinkedList {
                 newObject.previous = tail
                 tail = newObject
 
-
             }
-
         }
     }
 
+    fun pop(): Int? {
+        if (start == null) {
+            emptyQueueArgument()
+        }
+        val popValue = start?.value
+        start = start?.next
+        return popValue
+
+
+    }
+
+    fun push(queueValue: Int) {
+        val newObject = Node(queueValue)
+
+        var checking = start
+
+        if (start == null) {
+            start = newObject
+            tail = newObject
+
+        } else {
+            while (checking?.next != null) {
+                checking = checking.next
+            }
+
+            tail?.next = newObject
+            newObject.previous = tail
+            tail = newObject
+        }
+
+    }
 }
 
 
